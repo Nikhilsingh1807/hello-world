@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int trailingZeroes(int n) {
+        //no. of occurences of 10 ==  no.of zeroes.
+        //Basic Formula = for 100! we find using 5 as power[p];[100/5]+[100/5^2]+[100/5^3]...until it becomes 0(0...).
+        //in above example we get [100/5]+[100/5^2]+[100/5^3] = 20+4+0 = 24 trailing zeroes.
+        int ans = 0;
+        int p = 5;
+        while((n/p)>0){
+            ans += (n/p);
+            p = p*5;
+        }return ans;
+}
+};
+//This problem uses Legendre's (De Polignac's) formula for Exponents of prime in n!
